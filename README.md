@@ -10,8 +10,8 @@ Here is a wiring example for `I2C0`.
 | ----------------- | ------- |
 | 3V3               | VCC     |
 | GND               | GND     |
-| GP4 (I2C0 SDA)    | SDA     |
-| GP5 (I2C0 SCL)    | SCL     |
+| GP4 (I2C1 SDA)    | SDA     |
+| GP5 (I2C1 SCL)    | SCL     |
 
 ![wiring](https://github.com/niklauslee/mpu6050/blob/main/images/wiring.jpg?raw=true)
 
@@ -27,11 +27,11 @@ Here is an example code for reading raw data from MPU6050.
 
 ```javascript
 const {I2C} = require('i2c');
-const i2c0 = new I2C(0);
+const i2c1 = new I2C(1);
 
 const {MPU6050} = require('mpu6050');
 const mpu = new MPU6050();
-mpu.setup(i2c0);
+mpu.setup(i2c1);
 
 setInterval(() => {
   let v = mpu.read();
